@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { GlobalTheme } from '@carbon/react';
+import CommonHeader from './modules/Header/HeaderModule';
+import HomeModule from './modules/Home/HomeModule';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <GlobalTheme>
+      <div className="example">
+    <CommonHeader className="header-area" />
+    <div className="content-area">
+      <HomeModule />
     </div>
+  </div>
+   </GlobalTheme>
   );
 }
 

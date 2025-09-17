@@ -1,0 +1,44 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/theme' as *;
+
+// Common styles
+.home-page-content {
+  margin-top: $spacing-05;
+}
+
+.home-page-content-block {
+  padding: 10px;
+  block-size: auto;
+  min-height: 500px;
+  background-clip: content-box;
+}
+
+.home-page-content-card {
+  
+  height: 100%;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.home-page-content-text {
+  padding: 10px;
+  height: 100%;
+}
+
+
+// Status icon
+.home-page__status-icon {
+  fill: $support-success;
+  vertical-align: middle;
+}
+
+// Card images
+.home-page-content-card img {
+  padding: 10px;
+  max-height: 80px;
+  object-fit: contain;
+}
