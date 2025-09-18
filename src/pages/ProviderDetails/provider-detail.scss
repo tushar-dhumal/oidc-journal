@@ -1,0 +1,100 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/type' as *;
+
+.provider-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-05;
+}
+
+.provider-detail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-07;
+  
+  .provider-logo {
+    max-width: 120px;
+    max-height: 60px;
+    margin-right: $spacing-05;
+  }
+  
+  .provider-description {
+    @include type-style('body-01');
+    max-width: 800px;
+  }
+}
+
+.provider-detail-content {
+  margin-top: $spacing-08;
+  
+  h2 {
+    @include type-style('heading-03');
+    margin-bottom: $spacing-06;
+  }
+}
+
+.config-steps {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-07;
+}
+
+.config-step {
+  padding: $spacing-05;
+  background-color: $layer-01;
+  border-left: 4px solid $border-subtle-01;
+  border-radius: 0 4px 4px 0;
+  
+  h3 {
+    @include type-style('heading-02');
+    margin-bottom: $spacing-05;
+  }
+  
+  p {
+    @include type-style('body-01');
+    margin-bottom: $spacing-05;
+  }
+}
+
+.code-block {
+  background-color: $layer-02;
+  padding: $spacing-05;
+  border-radius: 4px;
+  margin: $spacing-05 0;
+  overflow-x: auto;
+  
+  code {
+    @include type-style('code-01');
+    white-space: pre;
+  }
+}
+
+.step-image-container {
+  margin: $spacing-05 0;
+  
+  .step-image {
+    max-width: 100%;
+    border: 1px solid $border-subtle-01;
+    border-radius: 4px;
+  }
+}
+
+// Provider-specific styling
+.okta-detail {
+  .config-step {
+    border-left-color: #007dc1; // Okta blue
+  }
+}
+
+.ibm-verify-detail {
+  .config-step {
+    border-left-color: #0f62fe; // IBM blue
+  }
+}
+
+.websphere-detail {
+  .config-step {
+    border-left-color: #a56eff; // Purple for WebSphere
+  }
+}
