@@ -47,4 +47,5 @@ replay_pid*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
 >>>>>>> 82298ec (Initialize project using Create React App)

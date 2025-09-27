@@ -13,15 +13,22 @@ import {
   SideNavMenuItem,
 } from '@carbon/react';
 import { Notification, UserAvatar, Switcher } from '@carbon/icons-react';
+import { useNavigate } from 'react-router-dom';
+import { CARD_CONTENT } from '../../constants';
 
 // eslint-disable-next-line react/prop-types
 export default function CommonHeader(className) {
+
+  const navigate = useNavigate();
   const [isSideNavExpanded, setIsSideNavExpanded] = useState(false);
 
   const handleClickSideNavExpand = () => {
     setIsSideNavExpanded(!isSideNavExpanded);
   };
 
+  const handleCardClick = (path) => {
+    navigate(path);
+  };
   return (
     <Header aria-label="Carbon Tutorial" className={className}>
       <SkipToContent />
@@ -51,32 +58,15 @@ export default function CommonHeader(className) {
       
       <SideNav aria-label="Side navigation" isRail expanded={isSideNavExpanded}>
         <SideNavItems>
-          <SideNavMenu renderIcon={'home'} title="Category title">
-            <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-            <SideNavMenuItem aria-current="page" href="javascript:void(0)">
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavMenu renderIcon={'home'} title="Category title">
-            <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-            <SideNavMenuItem aria-current="page" href="javascript:void(0)">
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavMenu renderIcon={'home'} title="Category title">
-            <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-            <SideNavMenuItem aria-current="page" href="javascript:void(0)">
-              Link
-            </SideNavMenuItem>
-            <SideNavMenuItem href="javascript:void(0)">Link</SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavLink renderIcon={'home'} href="javascript:void(0)">
-            Link
+          
+          <SideNavLink renderIcon={'home'} onClick={() => handleCardClick(CARD_CONTENT.OKTA.path)}>
+            Okta OpenID Connect
           </SideNavLink>
-          <SideNavLink renderIcon={'home'} href="javascript:void(0)">
-            Link
+          <SideNavLink renderIcon={'home'} onClick={() => handleCardClick(CARD_CONTENT.IBM_VERIFY.path)}>
+            IBM Verify
+          </SideNavLink>
+          <SideNavLink renderIcon={'home'} onClick={() => handleCardClick(CARD_CONTENT.WEBSPHERE.path)}>
+            IBM WebSphere Liberty
           </SideNavLink>
         </SideNavItems>
       </SideNav>
